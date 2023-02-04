@@ -1,0 +1,22 @@
+<html>
+    <head>Coba</head>
+    <body>
+        <script>
+            
+            function towerOfHanoi(n, fromDisk, toDisk, auxDisk) {
+                if (n === 1) {
+                    console.log(`Move disk 1 from ${fromDisk} to ${toDisk}`);
+                    return;
+                }
+                
+                towerOfHanoi(n - 1, fromDisk, auxDisk, toDisk);
+                console.log(`Move disk ${n} from ${fromDisk} to ${toDisk}`);
+                towerOfHanoi(n - 1, auxDisk, toDisk, fromDisk);
+            }
+
+            console.log("Steps to solve the Towers of Hanoi with 3 disks:");
+            towerOfHanoi(3, 'A', 'C', 'B');
+
+        </script>
+    </body>
+</html>
